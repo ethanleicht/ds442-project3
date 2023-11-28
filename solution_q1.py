@@ -13,7 +13,7 @@ discount = .5
 iters = int(1e5)
 
 # define exploration function
-def f(u, n, k=100.0):
+def f(u, n, k=100):
     # return u
     return u + k/n
 
@@ -56,7 +56,7 @@ for i in range(iters):
         state = new_state
     
     # decrease learning rate
-    lr *= (1 - 1.0*i/iters)
+    lr *= (1 - i/iters)
 
 env.close()
 
@@ -88,6 +88,6 @@ for _ in range(50):
 env2.close()
 
 print()
-print(f'Rate of victory in 50 games: {100.0*wins/total_games}%')
+print(f'Rate of victory in 50 games: {100*wins/total_games}%')
 # print(len(qtable.keys()))
 ###YOUR Q-LEARNING CODE ENDS
